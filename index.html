@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JEE Main — Chapter-wise Marks Weightage</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#06b6d4; --accent-2:#7c3aed; --glass: rgba(255,255,255,0.03);
+      --card-radius:16px; --pad:18px;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071126);color:#e6eef6}
+    .wrap{max-width:1100px;margin:32px auto;padding:22px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#04263b}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+    .controls{display:flex;gap:8px;align-items:center}
+    button, .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:inherit;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021827;border:none}
+
+    main{margin-top:20px;display:grid;grid-template-columns:1fr 360px;gap:20px}
+    .card{background:var(--card);border-radius:var(--card-radius);padding:var(--pad);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px 8px;text-align:left;font-size:13px}
+    th{font-weight:700;color:#cfeefc;border-bottom:1px solid rgba(255,255,255,0.04)}
+    tr{border-bottom:1px dashed rgba(255,255,255,0.03)}
+    .muted{color:var(--muted);font-size:12px}
+    .small{font-size:12px}
+
+    .summary{display:flex;flex-direction:column;gap:8px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);font-weight:600}
+
+    aside .card{position:sticky;top:24px}
+    .print{display:flex;gap:8px;align-items:center}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+    /* Tenglish toggle styles */
+    .telugu {display:none}
+    .toggled .english {display:none}
+    .toggled .telugu {display:inline}
+
+    /* Responsive */
+    @media (max-width:900px){main{grid-template-columns:1fr}aside{order:2}header{flex-direction:column;align-items:flex-start}}
+
+    /* Print-friendly */
+    @media print{
+      body{background:white;color:black}
+      .card{background:white;box-shadow:none}
+      .controls, footer{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">PT</div>
+        <div>
+          <h1>JEE Main — Chapter-wise Marks Weightage</h1>
+          <p class="lead">Approximate marks distribution for Paper-1 (Physics / Chemistry / Mathematics — 100 marks each)</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="print">
+          <button class="btn" onclick="window.print()">Save as PDF</button>
+          <button class="btn" id="toggleLang">Switch to English</button>
+        </div>
+        <button class="btn primary" onclick="downloadHTML()">Download PDF</button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="card">
+          <h2 style="margin:0 0 8px">Mathematics — 100 Marks <span class="muted small">(Approx.)</span></h2>
+          <div class="grid" id="mathTable">
+            <div>
+              <table>
+                <thead><tr><th>Chapter</th><th>Qs</th><th>Marks</th></tr></thead>
+                <tbody>
+                  <tr><td>Coordinate Geometry</td><td>3</td><td>12</td></tr>
+                  <tr><td>Calculus (Diff, Int, AOD)</td><td>4</td><td>16</td></tr>
+                  <tr><td>Vector & 3D Geometry</td><td>2–3</td><td>8–12</td></tr>
+                  <tr><td>Algebra (Complex, Seq & Series)</td><td>3</td><td>12</td></tr>
+                  <tr><td>Matrices & Determinants</td><td>1–2</td><td>4–8</td></tr>
+                  <tr><td>Probability & Statistics</td><td>2</td><td>8</td></tr>
+                  <tr><td>Trigonometry</td><td>1</td><td>4</td></tr>
+                  <tr><td>Mathematical Reasoning</td><td>1</td><td>4</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding:8px">
+              <h3 class="small" style="margin-top:0">Focus Chapters</h3>
+              <p class="muted">Calculus, Coordinate Geometry, Algebra — prioritise problems + previous-year questions.</p>
+              <div style="margin-top:10px">
+                <span class="pill">Goal: 45–50 marks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2 style="margin:0 0 8px">Physics — 100 Marks <span class="muted small">(Approx.)</span></h2>
+          <div class="grid">
+            <div>
+              <table>
+                <thead><tr><th>Chapter</th><th>Qs</th><th>Marks</th></tr></thead>
+                <tbody>
+                  <tr><td>Mechanics</td><td>5–6</td><td>20–24</td></tr>
+                  <tr><td>Current Electricity & Magnetism</td><td>3–4</td><td>12–16</td></tr>
+                  <tr><td>Electrostatics</td><td>2–3</td><td>8–12</td></tr>
+                  <tr><td>Modern Physics</td><td>3</td><td>12</td></tr>
+                  <tr><td>Thermodynamics & KTG</td><td>2</td><td>8</td></tr>
+                  <tr><td>Optics</td><td>2–3</td><td>8–12</td></tr>
+                  <tr><td>Waves & SHM</td><td>2</td><td>8</td></tr>
+                  <tr><td>Units, Dimensions</td><td>1</td><td>4</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding:8px">
+              <h3 class="small" style="margin-top:0">Focus Chapters</h3>
+              <p class="muted">Mechanics, Electricity, Modern Physics — strong conceptual clarity + numerical practice.</p>
+              <div style="margin-top:10px"><span class="pill">Goal: 40–45 marks</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2 style="margin:0 0 8px">Chemistry — 100 Marks <span class="muted small">(Approx.)</span></h2>
+          <div class="grid">
+            <div>
+              <table>
+                <thead><tr><th>Chapter</th><th>Qs</th><th>Marks</th></tr></thead>
+                <tbody>
+                  <tr><td>Physical (Mole, Thermo, Eq)</td><td>2–3</td><td>8–12</td></tr>
+                  <tr><td>Chemical & Ionic Equilibrium</td><td>1–2</td><td>4–8</td></tr>
+                  <tr><td>Electrochemistry & Redox</td><td>1–2</td><td>4–8</td></tr>
+                  <tr><td>Chemical Bonding</td><td>2–3</td><td>8–12</td></tr>
+                  <tr><td>Periodic Table & Properties</td><td>1–2</td><td>4–8</td></tr>
+                  <tr><td>Coordination Compounds</td><td>2</td><td>8</td></tr>
+                  <tr><td>Organic GOC & Hydrocarbons</td><td>2–3</td><td>8–12</td></tr>
+                  <tr><td>Biomolecules, Polymers, CIED</td><td>1–2</td><td>4–8</td></tr>
+                  <tr><td>s/p/d Block Elements</td><td>2–3</td><td>8–12</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding:8px">
+              <h3 class="small" style="margin-top:0">Focus Chapters</h3>
+              <p class="muted">Organic + Inorganic core, Physical fundamentals — practice reaction mechanisms and equilibrium problems.</p>
+              <div style="margin-top:10px"><span class="pill">Goal: 40–45 marks</span></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Quick Facts</h3>
+          <ul class="muted small" style="padding-left:16px;margin:0">
+            <li>Paper-1: 90 questions, 300 marks (30 Qs / subject, 4 marks each)</li>
+            <li>Section A: 20 MCQs per subject (single correct)</li>
+            <li>Section B: 10 numeric-type per subject — attempt any 5</li>
+            <li>Negative marking: −1 for wrong, +4 for correct</li>
+          </ul>
+
+          <div style="margin-top:12px">
+            <h4 style="margin:0 0 8px">Summary</h4>
+            <div class="summary">
+              <div><strong>Mathematics</strong> — Target: <span class="pill">45–50</span></div>
+              <div><strong>Physics</strong> — Target: <span class="pill">40–45</span></div>
+              <div><strong>Chemistry</strong> — Target: <span class="pill">40–45</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h4 style="margin:0 0 8px">Actions</h4>
+          <div style="display:flex;gap:8px">
+            <button class="btn" onclick="highlight('math')">Highlight Maths</button>
+            <button class="btn" onclick="highlight('phys')">Highlight Physics</button>
+            <button class="btn" onclick="highlight('chem')">Highlight Chemistry</button>
+          </div>
+          <p class="muted small" style="margin-top:10px">Use <em>Save as PDF</em> to create a clean printable note for your video or revision sheet.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="muted large">ALL THE BEST FOR YOUR PREPARATION</div><div class="yt-footer">
+  <a href="https://www.youtube.com/@prasanthSCET2025" target="_blank" style="color:#06b6d4;text-decoration:none;text-shadow:0 0 8px rgba(6,182,212,0.6);">
+    @Prasanth Talks | 🎥 YouTube
+  </a>
+</div>
+
+    </footer>
+  </div>
+
+  <script>
+    const wrap = document.querySelector('.wrap');
+    document.getElementById('toggleLang').addEventListener('click',()=>{
+      wrap.classList.toggle('toggled');
+      const btn = document.getElementById('toggleLang');
+      btn.textContent = wrap.classList.contains('toggled') ? 'Switch to English' : 'Switch to Tenglish';
+    });
+
+    function highlight(sub){
+      const cards = document.querySelectorAll('section .card');
+      cards.forEach(c=>c.style.boxShadow='0 6px 30px rgba(2,6,23,0.6)');
+      if(sub==='math') cards[0].style.boxShadow='0 10px 40px rgba(7,154,166,0.18)';
+      if(sub==='phys') cards[1].style.boxShadow='0 10px 40px rgba(124,58,237,0.18)';
+      if(sub==='chem') cards[2].style.boxShadow='0 10px 40px rgba(7,154,166,0.18)';
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    function downloadHTML(){
+      const blob = new Blob([document.documentElement.outerHTML],{type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'jee-marks-weightage.html'; document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
